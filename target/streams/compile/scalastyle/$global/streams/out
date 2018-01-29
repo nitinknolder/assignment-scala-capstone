@@ -1,11 +1,15 @@
 [0m[[0m[0minfo[0m] [0m[0mscalastyle using config /home/knoldus/IdeaProjects/assignment-scala-02-06/scalastyle-config.xml[0m
 [0m[[0m[0mdebug[0m] [0m[0mStarting scalastyle[0m
+[0m[[0m[0mdebug[0m] [0m[0mstart file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/edu/knoldus/database/MyDatabase.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mend file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/edu/knoldus/database/MyDatabase.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0mstart file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/Operations.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0mend file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/Operations.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0mstart file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/InventoryOperation.scala[0m
 [0m[[0m[0mdebug[0m] [0m[0mend file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/InventoryOperation.scala[0m
-[0m[[0m[0minfo[0m] [0m[0mscalastyle Processed 2 file(s)[0m
+[0m[[0m[0mdebug[0m] [0m[0mstart file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/search/Customer.scala[0m
+[0m[[0m[0mdebug[0m] [0m[0mend file /home/knoldus/IdeaProjects/assignment-scala-02-06/src/main/scala/edu/knoldus/search/Customer.scala[0m
+[0m[[0m[0minfo[0m] [0m[0mscalastyle Processed 4 file(s)[0m
 [0m[[0m[0minfo[0m] [0m[0mscalastyle Found 0 errors[0m
 [0m[[0m[0minfo[0m] [0m[0mscalastyle Found 0 warnings[0m
 [0m[[0m[0minfo[0m] [0m[0mscalastyle Found 0 infos[0m
-[0m[[0m[0minfo[0m] [0m[0mscalastyle Finished in 6 ms[0m
+[0m[[0m[0minfo[0m] [0m[0mscalastyle Finished in 9 ms[0m

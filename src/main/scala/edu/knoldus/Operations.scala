@@ -1,6 +1,7 @@
 package edu.knoldus
 
 import edu.knoldus.database.MyDatabase
+import search.Customer
 import org.apache.log4j.Logger
 
 
@@ -9,7 +10,7 @@ object Operations extends App {
   val iType = "Shoes"
   val iName = "Sports Shoes"
   val info = "Branded"
-  val price = 10
+  val price = 1000
   val vendInfo = "Adidas"
   val objShoes = MyDatabase (iType, iName, info, price, vendInfo)
   val objClothes = MyDatabase ("Clothes", "Shirt", "Cotton 100%", 2999, "Levis")
@@ -18,12 +19,14 @@ object Operations extends App {
   val map = Map (1 -> objShoes, 2 -> objClothes, 3 -> objTv, 4 -> objMobiles)
   val inventObj = new InventoryOperation (map)
   inventObj.inventoryMenu ()
-  //  val value: Option[MyDatabase] = map.get (1)
-  //  val list = map.values.toList
-  //  val list1 = map.keySet.toList
-  //  log.debug(list1.max)
-  val db = new InventoryOperation (map)
-  val returnObj = db.returnMethod ()
-  log.debug ("Return Map: " + returnObj.returnMap ())
+    val value: Option[MyDatabase] = map.get (1)
+    val list = map.values.toList
+    val list1 = map.keySet.toList
+    log.debug(list1.max)
+
+  val db = new Customer(map)
+  val returnObj = db.returnMap
+  log.debug ("Return Map: " + returnObj)
 }
+
 

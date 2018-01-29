@@ -1,9 +1,9 @@
 package edu.knoldus
 
 import edu.knoldus.database.MyDatabase
+import search.Customer
 import org.apache.log4j.Logger
 
-import scala.collection.immutable.ListMap
 import scala.io.StdIn
 
 
@@ -28,7 +28,7 @@ class InventoryOperation (product: Map[Int, MyDatabase] = Map ()) {
       case 2 => deleteItem ()
       case 3 => update ()
       case 4 => viewItem ()
-      case 5 => searchMenu ()
+      case 5 => new Customer (product).searchMenu (product)
       case 6 => exit ()
     }
   }
@@ -105,83 +105,11 @@ class InventoryOperation (product: Map[Int, MyDatabase] = Map ()) {
 
   //***************Exit******************
   def exit (): Unit = {
-    log.debug ("bye bye")
-  }
-
-  def lowToHigh (): Unit = {
-
-    log.debug (ListMap (product.toSeq.sortWith (_._2.price < _._2.price): _*))
-    log.debug ("\n")
-    searchMenu ()
-  }
-
-  def highToLow (): Unit = {
-
-    log.debug (ListMap (product.toSeq.sortWith (_._2.price > _._2.price): _*))
-    log.debug ("\n")
-    searchMenu ()
-  }
-
-  def searchMenu (): Unit = {
-
-    log.debug ("Selection the Type Of searching \n")
-    log.debug ("1: View All Items \n")
-    log.debug ("2: Search By Filtering Price \n")
-    log.debug ("3: View price of Item \n")
-    log.debug ("4: Checkout --> \n")
-    log.debug ("5: Main Menu \n")
-    log.debug ("Enter Your Choice: \n")
-    val select = StdIn.readInt ()
-    select match {
-      case 1 => viewItem ()
-      case 2 => log.debug ("A: Filter Price: Low To High \n")
-        log.debug ("B: Filter Price High To Low \n")
-        log.debug ("Enter your choice:")
-        val filterPrice = StdIn.readLine ().toLowerCase ()
-
-        filterPrice match {
-          case "a" => lowToHigh ()
-          case "b" => highToLow ()
-          case _ => searchMenu ()
-        }
-      case 3 => searchItemPrice ()
-      case 4 => checkOut ()
-      case 5 => inventoryMenu ()
-    }
-  }
-
-  def searchItemPrice (): Unit = {
-
-    val typeOfItem = StdIn.readLine ("Enter the Type Of Item: \n")
-    val searching = product.filter ((t) => t._2.itemType == typeOfItem)
-    log.debug (searching)
-    log.debug ("\n")
-    new InventoryOperation (product ++ searching).inventoryMenu ()
-  }
-
-  def returnMethod (): InventoryOperation = {
-    new InventoryOperation (product)
-  }
-
-  def returnMap (): Map[Int, MyDatabase] = product
-
-  def checkOut (): Unit = {
-
-    log.debug (product)
-    val selectProduct = StdIn.readLine ("\nDo You Want to Buy This Item --> \n")
-    if (selectProduct.toLowerCase == "y") {
-      log.debug ("Enter itemId for product you want to Buy \n")
-      val itemId = StdIn.readInt ()
-      val value: Option[MyDatabase] = product.get (itemId)
-      val newMap = Map (itemId -> value)
-      new InventoryOperation (product).searchMenu ()
-      log.debug (newMap)
-    }
-    else {
-      inventoryMenu ()
-    }
+    log.debug ("<-----Thanks For Using KnolKart<---- \n")
   }
 }
+
+
 
 
 
